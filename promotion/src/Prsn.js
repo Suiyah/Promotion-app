@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Person = () => {
+  const [message, setMessage] = useState(""); 
+
   const person = {
     name: "John Doe",
     jobTitle: "Software Engineer",
@@ -8,6 +10,10 @@ const Person = () => {
     age: 30,
     location: "San Francisco",
     hobbies: ["Reading", "Cycling", "Traveling"],
+  };
+
+  const handleClick = () => {
+    setMessage("Hello! This is a message.");
   };
 
   return (
@@ -20,7 +26,8 @@ const Person = () => {
       <p><strong>Location:</strong> {person.location}</p>
       <p><strong>Hobbies:</strong> {person.hobbies.join(", ")}</p>
 
-      <button>Click Me</button>
+      {message && <p style={{ color: "green", fontWeight: "bold" }}>{message}</p>}
+      <button onClick={handleClick}>Click Me</button>
     </div>
   );
 };
