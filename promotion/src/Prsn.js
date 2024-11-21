@@ -19,6 +19,8 @@ const Person = () => {
       <p><strong>Age:</strong> {person.age}</p>
       <p><strong>Location:</strong> {person.location}</p>
       <p><strong>Hobbies:</strong> {person.hobbies.join(", ")}</p>
+
+      <button>Click Me</button>
     </div>
   );
 };
