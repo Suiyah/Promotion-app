@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 const Person = () => {
   const [message, setMessage] = useState("");
-  const [isPromoted, setIsPromoted] = useState(false); 
+  const [jobTitle, setJobTitle] = useState("Software Engineer"); 
+  const [isPromoted, setIsPromoted] = useState(false);
 
   const person = {
     name: "John Doe",
-    jobTitle: "Software Engineer",
+    jobTitle: jobTitle,
     company: "TechCorp",
     age: 30,
     location: "San Francisco",
@@ -15,6 +16,7 @@ const Person = () => {
 
   const handleClick = () => {
     setMessage("Congratulations on your promotion!");
+    setJobTitle("Senior Software Engineer");
     setIsPromoted(true);
   };
 
