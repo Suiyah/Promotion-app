@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 const Person = () => {
-  const [message, setMessage] = useState(""); 
+  const [message, setMessage] = useState("");
+  const [isPromoted, setIsPromoted] = useState(false); 
 
   const person = {
     name: "John Doe",
@@ -13,7 +14,8 @@ const Person = () => {
   };
 
   const handleClick = () => {
-    setMessage("Hello! This is a message.");
+    setMessage("Congratulations on your promotion!");
+    setIsPromoted(true);
   };
 
   return (
@@ -27,7 +29,7 @@ const Person = () => {
       <p><strong>Hobbies:</strong> {person.hobbies.join(", ")}</p>
 
       {message && <p style={{ color: "green", fontWeight: "bold" }}>{message}</p>}
-      <button onClick={handleClick}>Click Me</button>
+      <button onClick={handleClick}>{isPromoted ? "Promote" : "Click Me"}</button>
     </div>
   );
 };
